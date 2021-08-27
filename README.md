@@ -1,7 +1,7 @@
-# COVID19_secondary_analysis
-## Secondary analysis of transcriptomes of SARS-CoV-2 infection models to characterize COVID-19
+# gene2gauss
+## A multi-view gaussian gene embedding learner for analyzing transcriptomic networks
 <br/>
-<p align="center"><img src="graphical_abstract.png" style="vertical-align:middle" width="600" height="600"></p>
+<p align="center"><img src="Schematic.png" style="vertical-align:middle" width="600" height="600"></p>
 
 This repository contains the various input files, generated outputs and scripts associated with our paper titled above. These scripts can be used to generate or reproduce the data published in our main text and other supplemental items. 
 
