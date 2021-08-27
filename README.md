@@ -1,6 +1,6 @@
 # gene2gauss: A multi-view gaussian gene embedding learner for analyzing transcriptomic networks
 <br/>
-<p align="center"><img src="Schematic.png" style="vertical-align:middle" width="800" height="500"></p>
+<p align="center"><img src="Schematic.png" style="vertical-align:middle" width="800" height="450"></p>
 
 This repository contains the code for the algorithm <i>gene2gauss</i>, part of a manuscript submission for AMIA 2022 Informatics Summit.
 
