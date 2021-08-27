@@ -371,14 +371,24 @@ pre code {
 </div>
 <div id="training" class="section level2">
 <h2>Training</h2>
-<p>Our model can be trained in either supervised or unsupervised approaches.</p>
-<pre class="bash"><code>python training_supervised.py (or) training_supervised.py 
+<p>Our model can be trained in either supervised or unsupervised approaches <br /></p>
+<pre class="bash"><code>python training_supervised.py (or) training_unsupervised.py 
       --inpath /path to input networks/
       --feat_file /path to matrix(.npy) containing node features/
-      --sparse
-      --val_file /path to file containing validation edges/ 
-      --hid_dims 128
+      --enc type_of_encoder(&#39;GCN&#39; or &#39;GAT&#39; or &#39;multiGCN&#39; or &#39;multiGAT&#39;)
+      --sparse --val_file /path to file containing testing edges/ 
+      --hid_dims num_of_filters
+      --emb_size final_embedding_size
+      --max_iter maximum number of iterations
+      --tolerance for_early_stopping
       --outpath /outdir/</code></pre>
+<ul>
+<li><i> <code>--</code>inpath</i>: Path to folder one or more input networks in the form of archived numpy (.npz) files.</li>
+<li><i> <code>--</code>feat_file</i>: Path to a numpy array (.npy) containing node features for attributes graphs. Number of rows must match the number of network nodes. If not provides, identity features will be generated and used during the training.</li>
+<li><i> <code>--</code>sparse</i>: A boolean flag to indicate if sparse implementations need to be used during training.</li>
+<li><i> <code>--</code>enc</i>: Type of convolutional encoder (one among <i>GCN</i>, <i>GAT</i>, <i>multiGCN</i> or <i>multiGAT</i>)</li>
+<li><i> <code>--</code>val_file</i>: Path to the file containing the edges for link-prediction objective (supervised). In the unsupervised case, training edges will be retrieved from the input networks and these edges will be used for evaluating the final node features.</li>
+</ul>
 </div>
 </div>
 
