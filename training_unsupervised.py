@@ -35,7 +35,7 @@ if __name__ == '__main__':
     if args.sparse:
         X = sp.csr_matrix(X)
 
-    train_edges, train_labels, val_edges, val_labels, test_edges, test_labels = split_adjacencies(adj_mats)
+    train_edges, train_labels, val_edges, val_labels, test_edges, test_labels = split_adjacencies(adj_mats, threshold=args.threshold)
     train_edges = np.concatenate((train_edges, val_edges))
     train_labels = np.concatenate((train_labels, val_labels))
     val_edges = test_edges

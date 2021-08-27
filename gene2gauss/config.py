@@ -49,6 +49,10 @@ args.add_argument('--max_iter',
                   type=int,
                   default=100,
                   help="Maximum number of iterations")
+args.add_argument('--threshold',
+                  default=0.8,
+                  type=float,
+                  help='Weight threshold for identifying positive and negative edge sets (applicable for unsupervised implementations)')
 args.add_argument('--outpath',
                   default="/",
                   help="Path to output folder")
