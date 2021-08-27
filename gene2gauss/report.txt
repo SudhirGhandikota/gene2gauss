@@ -1,0 +1,60 @@
+TensorFlow 2.0 Upgrade Script
+-----------------------------
+Converted 1 files
+Detected 8 issues that require attention
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+File: model.py
+--------------------------------------------------------------------------------
+model.py:114:17: ERROR: Using member tf.contrib.layers.xavier_initializer in deprecated module tf.contrib. tf.contrib.layers.xavier_initializer cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+model.py:119:16: WARNING: tf.get_variable requires manual check. tf.get_variable returns ResourceVariables by default in 2.0, which have well-defined semantics and are stricter about shapes. You can disable this behavior by passing use_resource=False, or by calling tf.compat.v1.disable_resource_variables().
+model.py:121:16: WARNING: tf.get_variable requires manual check. tf.get_variable returns ResourceVariables by default in 2.0, which have well-defined semantics and are stricter about shapes. You can disable this behavior by passing use_resource=False, or by calling tf.compat.v1.disable_resource_variables().
+model.py:130:15: WARNING: tf.get_variable requires manual check. tf.get_variable returns ResourceVariables by default in 2.0, which have well-defined semantics and are stricter about shapes. You can disable this behavior by passing use_resource=False, or by calling tf.compat.v1.disable_resource_variables().
+model.py:131:15: WARNING: tf.get_variable requires manual check. tf.get_variable returns ResourceVariables by default in 2.0, which have well-defined semantics and are stricter about shapes. You can disable this behavior by passing use_resource=False, or by calling tf.compat.v1.disable_resource_variables().
+model.py:134:18: WARNING: tf.get_variable requires manual check. tf.get_variable returns ResourceVariables by default in 2.0, which have well-defined semantics and are stricter about shapes. You can disable this behavior by passing use_resource=False, or by calling tf.compat.v1.disable_resource_variables().
+model.py:135:18: WARNING: tf.get_variable requires manual check. tf.get_variable returns ResourceVariables by default in 2.0, which have well-defined semantics and are stricter about shapes. You can disable this behavior by passing use_resource=False, or by calling tf.compat.v1.disable_resource_variables().
+model.py:225:42: WARNING: Changing dataset.make_one_shot_iterator() to tf.compat.v1.data.make_one_shot_iterator(dataset). Please check this transformation.
+
+================================================================================
+Detailed log follows:
+
+================================================================================
+--------------------------------------------------------------------------------
+Processing file 'model.py'
+ outputting to 'model_v2.py'
+--------------------------------------------------------------------------------
+
+51:8: INFO: Renamed 'tf.reset_default_graph' to 'tf.compat.v1.reset_default_graph'
+52:8: INFO: Renamed 'tf.set_random_seed' to 'tf.compat.v1.set_random_seed'
+114:17: ERROR: Using member tf.contrib.layers.xavier_initializer in deprecated module tf.contrib. tf.contrib.layers.xavier_initializer cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+119:16: WARNING: tf.get_variable requires manual check. tf.get_variable returns ResourceVariables by default in 2.0, which have well-defined semantics and are stricter about shapes. You can disable this behavior by passing use_resource=False, or by calling tf.compat.v1.disable_resource_variables().
+119:16: INFO: Renamed 'tf.get_variable' to 'tf.compat.v1.get_variable'
+121:16: WARNING: tf.get_variable requires manual check. tf.get_variable returns ResourceVariables by default in 2.0, which have well-defined semantics and are stricter about shapes. You can disable this behavior by passing use_resource=False, or by calling tf.compat.v1.disable_resource_variables().
+121:16: INFO: Renamed 'tf.get_variable' to 'tf.compat.v1.get_variable'
+124:26: INFO: Renamed 'tf.sparse_tensor_dense_matmul' to 'tf.sparse.sparse_dense_matmul'
+130:15: WARNING: tf.get_variable requires manual check. tf.get_variable returns ResourceVariables by default in 2.0, which have well-defined semantics and are stricter about shapes. You can disable this behavior by passing use_resource=False, or by calling tf.compat.v1.disable_resource_variables().
+130:15: INFO: Renamed 'tf.get_variable' to 'tf.compat.v1.get_variable'
+131:15: WARNING: tf.get_variable requires manual check. tf.get_variable returns ResourceVariables by default in 2.0, which have well-defined semantics and are stricter about shapes. You can disable this behavior by passing use_resource=False, or by calling tf.compat.v1.disable_resource_variables().
+131:15: INFO: Renamed 'tf.get_variable' to 'tf.compat.v1.get_variable'
+134:18: WARNING: tf.get_variable requires manual check. tf.get_variable returns ResourceVariables by default in 2.0, which have well-defined semantics and are stricter about shapes. You can disable this behavior by passing use_resource=False, or by calling tf.compat.v1.disable_resource_variables().
+134:18: INFO: Renamed 'tf.get_variable' to 'tf.compat.v1.get_variable'
+135:18: WARNING: tf.get_variable requires manual check. tf.get_variable returns ResourceVariables by default in 2.0, which have well-defined semantics and are stricter about shapes. You can disable this behavior by passing use_resource=False, or by calling tf.compat.v1.disable_resource_variables().
+135:18: INFO: Renamed 'tf.get_variable' to 'tf.compat.v1.get_variable'
+147:24: INFO: Added keywords to args of function 'tf.reduce_mean'
+149:24: INFO: Added keywords to args of function 'tf.reduce_mean'
+167:17: INFO: Renamed 'tf.sparse_placeholder' to 'tf.compat.v1.sparse_placeholder'
+196:20: INFO: Added keywords to args of function 'tf.reduce_sum'
+197:18: INFO: Added keywords to args of function 'tf.reduce_sum'
+197:32: INFO: Renamed 'tf.log' to 'tf.math.log'
+199:21: INFO: Added keywords to args of function 'tf.reduce_sum'
+225:42: WARNING: Changing dataset.make_one_shot_iterator() to tf.compat.v1.data.make_one_shot_iterator(dataset). Please check this transformation.
+
+236:69: INFO: Renamed 'tf.trainable_variables' to 'tf.compat.v1.trainable_variables'
+247:25: INFO: Renamed 'tf.assign' to 'tf.compat.v1.assign'
+267:19: INFO: Renamed 'tf.train.AdamOptimizer' to 'tf.compat.v1.train.AdamOptimizer'
+269:15: INFO: Renamed 'tf.Session' to 'tf.compat.v1.Session'
+269:33: INFO: Renamed 'tf.ConfigProto' to 'tf.compat.v1.ConfigProto'
+269:60: INFO: Renamed 'tf.GPUOptions' to 'tf.compat.v1.GPUOptions'
+271:17: INFO: Renamed 'tf.global_variables_initializer' to 'tf.compat.v1.global_variables_initializer'
+--------------------------------------------------------------------------------
+
